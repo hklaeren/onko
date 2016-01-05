@@ -1,0 +1,92 @@
+/* 
+  Localizable.strings
+  UniFontis
+
+  Created by Kalpit Gajera on 14/04/15.
+  Copyright (c) 2015 NexusLinkServices. All rights reserved.
+*/
+
+// Home View
+
+"change_lang"="German";
+"add_med"="Add Medication";
+"add_food"="Add Food";
+"add_diary"="Add Diary";
+"pers_sett"="Personal Settings";
+
+
+// Tabbar
+
+"home_tab"="Home";
+"glossary_tab"="Glossary";
+"diary_tab"="Diary";
+"medication_tab"="Medication";
+"food_tab"="Food";
+
+// Diary
+
+"add_text"="Add Text";
+"cancel"="Cancel";
+"ok"="OK";
+"btn_text"="Text";
+"btn_weight"="Weight";
+"btn_bp"="BP";
+"lbl_Date_Time"="Date / Time";
+"lbl_Type"="Type";
+"lbl_Info"="Information";
+"add_note"="Add your note";
+"enter_weight"="Please enter your weight in kg";
+"add_sys"="Add your SYS";
+"add_dia"="Add your DIA";
+"add_BP"="Add BP";
+"edit_bp"="Edit BP";
+"edit_text"="Edit text";
+"edit_weight"="Edit Weight";
+"alert_sys"="Please enter SYS information";
+"alert_dia"="Please enter DIA information";
+
+// medicine
+
+"enter_medicine_name"="Please enter medicine name";
+"enter_medicine_qty"="Please enter medicine quantity";
+"hourly"="Hourly";
+"medicine"="Medicine";
+"qty"="Quantity";
+"time"="Times";
+"Showme"="Show me";
+"close"="Close";
+"taken"="Taken";
+"nottaken"="Not taken";
+"reminder"="Reminder";
+"medication"="Medication";
+
+
+// Food
+"fat"="Fat";
+"cal"="kCal";
+"Protein"="protein";
+"carb"="Carb";
+"gram"="Grams";
+"piece"="Piece";
+"unit"="Unit";
+"cup"="Cup";
+"msg_enter_food"="Enter Food Name";
+"msg_enter_qty"="Enter Food Quantity";
+"msg_enter_cal"="Enter calories";
+"msg_enter_fat"="Enter fat";
+"msg_enter_prot"="Enter protein";
+"msg_enter_carb"="Enter carb";
+
+
+//Personal Setting
+"firstname"="First Name";
+"lastname"="Last Name";
+"dob"="Date of Birth";
+"mob"="Mobile";
+"email"="Email";
+"add1"="Address Line 1";
+"add2"="Address Line 2";
+"city"="City";
+"zip"="Postal Code";
+"height"="Height";
+"save"="Save";

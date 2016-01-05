@@ -1,0 +1,88 @@
+/* 
+  Localizable.strings
+  UniFontis
+
+  Created by Kalpit Gajera on 14/04/15.
+  Copyright (c) 2015 NexusLinkServices. All rights reserved.
+*/
+
+"change_lang"="Englisch";
+"add_med"="Neue Medikation";
+"add_food"="Neue Nahrung";
+"add_diary"="Neue Notiz";
+"pers_sett"="Einstellungen";
+
+
+// Tabbar
+
+"home_tab"="Start";
+"glossary_tab"="Glossar";
+"diary_tab"="Tagebuch";
+"medication_tab"="Medikation";
+"food_tab"="Ernährung";
+
+// Diary
+
+"add_text"="Neuer Text";
+"cancel"="Abbrechen";
+"ok"="Ok";
+"btn_text"="Text";
+"btn_weight"="Gewicht";
+"btn_bp"="Blutdruck";
+"lbl_Date_Time"="Datum / Zeit";
+"lbl_Type"="Art";
+"lbl_Info"="Informationen";
+"add_note"="Notiz hinzufügen";
+"enter_weight"="Gewicht in kg";
+"add_sys"="Systolischer Druck";
+"add_dia"="Diastolischer Druck";
+"add_BP"="Neuer Blutdruck";
+"edit_bp"="Blutdruck bearbeiten";
+"edit_text"="Text bearbeiten";
+"edit_weight"="Gewicht bearbeiten";
+"alert_sys"="Bitte systolischen Druck eingeben";
+"alert_dia"="Bitte diastolischen Druck eingeben";
+
+// medicine
+
+"enter_medicine_name"="Bitte Medikament eingeben";
+"enter_medicine_qty"="Bitte Menge eingeben";
+"hourly"="stündlich";
+"medicine"="Medizin";
+"qty"="Menge";
+"time"="Wie oft";
+"Showme"="Öffnen";
+"close"="Schließen";
+"taken"="Eingenommen";
+"nottaken"="Nicht eingenommen";
+"reminder"="Erinnerung";
+"medication"="Medikation";
+
+// Food
+"fat"="Fett";
+"cal"="kCal";
+"Protein"="Eiweiß";
+"carb"="KH";
+"gram"="Gramm";
+"piece"="Stück";
+"unit"="Einheit";
+"cup"="Tasse";
+"msg_enter_food"="Bezeichnung eingeben";
+"msg_enter_qty"="Menge eingeben";
+"msg_enter_cal"="Kalorien eingeben";
+"msg_enter_fat"="Fett eingeben";
+"msg_enter_prot"="Eiweiß eingeben";
+"msg_enter_carb"="Kohlenhydrate eingeben";
+
+//Personal Setting
+"firstname"="Vorname";
+"lastname"="Nachname";
+"dob"="Geburtsdatum";
+"mob"="Handynummer";
+"email"="E-Mail";
+"add1"="Adresszeile 1";
+"add2"="Adresszeile 2";
+"city"="City";
+"zip"="Postleitzahl";
+"height"="Höhe";
+"save"="Speichern";
