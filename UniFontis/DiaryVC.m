@@ -582,7 +582,7 @@ NSSortDescriptor *brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date
         objdiary.info=txtView_AddEntry.text;
         
         BOOL addInfo=[[DatabaseManager getSharedInstance] addDiaryInfo:objdiary];
-        NSLog(@"%hhd",addInfo);
+        NSLog(@" %s", addInfo ? "true" : "false");
     }
     [popover dismiss];
     tblDiary.tableHeaderView=headerView;

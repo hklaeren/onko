@@ -379,9 +379,9 @@
    NSData *requestData = [NSJSONSerialization dataWithJSONObject:requestdict options:kNilOptions error:&error];
      NSString *str=[[NSString alloc]initWithData:requestData encoding:NSUTF8StringEncoding];
     NSLog(@"json body: %@",str);
-    NSData* responseData = nil;
+    /* NSData* responseData = nil; *** not used */
     NSURL *url1=[NSURL URLWithString:[WEBSERVICE_URL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    responseData = [NSMutableData data] ;
+    /* responseData = [NSMutableData data] ; ***never read! */
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:url1];
     NSString *bodydata=[NSString stringWithFormat:@"json=%@",str];
     [request setHTTPMethod:@"POST"];
@@ -413,9 +413,9 @@
     NSData *requestData = [NSJSONSerialization dataWithJSONObject:requestdict options:kNilOptions error:&error];
     NSString *str=[[NSString alloc]initWithData:requestData encoding:NSUTF8StringEncoding];
    // NSLog(@"json body: %@",str);
-    NSData* responseData = nil;
+    /* NSData* responseData = nil; *** not used */
     NSURL *url1=[NSURL URLWithString:[WEBSERVICE_URL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    responseData = [NSMutableData data] ;
+    /* responseData = [NSMutableData data] ; *** never read */
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:url1];
     NSString *bodydata=[NSString stringWithFormat:@"json=%@",str];
     [request setHTTPMethod:@"POST"];
@@ -454,10 +454,11 @@
 
     NSData *requestData = [NSJSONSerialization dataWithJSONObject:requestdict options:kNilOptions error:&error];
     NSString *str=[[NSString alloc]initWithData:requestData encoding:NSUTF8StringEncoding];
-    NSData* responseData = nil;
+    /* NSData* responseData = nil; *** not used */
     NSString *mainurl=@"http://kinderopvangapp.eu/api/uploadimg.php";
     NSURL *url1=[NSURL URLWithString:[mainurl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    responseData = [NSMutableData data] ;
+    /* responseData = [NSMutableData data] ; *** never read */
+
     
     
     NSMutableURLRequest *request=[NSMutableURLRequest requestWithURL:url1];
