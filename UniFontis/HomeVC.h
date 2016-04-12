@@ -7,21 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Utility.h"
-@interface HomeVC : UIViewController
-{
-     IBOutlet UIButton *btnFood;
-    
-     IBOutlet UIButton *btnAddDiary;
-     IBOutlet UIButton *btnPSetting;
-     IBOutlet UIButton *btnAddMedication;
-     IBOutlet UIButton *btnChangeLang;
-}
-- (IBAction)addMedication:(id)sender;
-- (IBAction)addDiary:(id)sender;
-- (IBAction)addFood:(id)sender;
+@import MessageUI;
 
-- (IBAction)goToPersonalSettings:(id)sender;
-- (IBAction)changelanguage:(id)sender;
+
+
+@interface HomeVC : UIViewController {
+    IBOutlet UIWebView *webView;
+}
+
+@property (nonatomic, retain) IBOutlet UIWebView *webView;
 
 @end
+
