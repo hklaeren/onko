@@ -231,32 +231,32 @@
     [tatName becomeFirstResponder];
     if(tatName.text.length ==0)
     {
-        [Utility showAlertWithwithMessage:DPLocalizedString(@"msg_enter_food", nil)];
+        [Utility showAlertWithMessage:DPLocalizedString(@"msg_enter_food", nil)];
         return;
     }
     else if(txtQty.text.length == 0)
     {
-        [Utility showAlertWithwithMessage:DPLocalizedString(@"msg_enter_qty", nil)];
+        [Utility showAlertWithMessage:DPLocalizedString(@"msg_enter_qty", nil)];
         return;
     }
    /*else if(cal.text.length == 0)
    {
-       [Utility showAlertWithwithMessage:DPLocalizedString(@"msg_enter_cal", nil)];
+       [Utility showAlertWithMessage:DPLocalizedString(@"msg_enter_cal", nil)];
        return;
    }
     else if (fat.text.length==0)
     {
-        [Utility showAlertWithwithMessage:DPLocalizedString(@"msg_enter_fat", nil)];
+        [Utility showAlertWithMessage:DPLocalizedString(@"msg_enter_fat", nil)];
         return;
     }
     else if (protein.text.length==0)
     {
-        [Utility showAlertWithwithMessage:DPLocalizedString(@"msg_enter_prot", nil)];
+        [Utility showAlertWithMessage:DPLocalizedString(@"msg_enter_prot", nil)];
         return;
     }
     else if (carb.text.length==0)
     {
-        [Utility showAlertWithwithMessage:@"Enter carb"];
+        [Utility showAlertWithMessage:@"Enter carb"];
         return;
     }*/
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];

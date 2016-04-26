@@ -199,13 +199,13 @@ NSString *kRemindMeNotificationDataKey = @"kRemindMeNotificationDataKey";
 //    http://stackoverflow.com/questions/11303413/iphone-daily-local-notifications
     if(txtMedicine.text.length==0)
     {
-        [Utility showAlertWithwithMessage:DPLocalizedString(@"enter_medicine_name", nil)];
+        [Utility showAlertWithMessage:DPLocalizedString(@"enter_medicine_name", nil)];
         return;
     }
     
     if(txtQty.text.length==0)
     {
-        [Utility showAlertWithwithMessage:DPLocalizedString(@"enter_medicine_qty", nil)];
+        [Utility showAlertWithMessage:DPLocalizedString(@"enter_medicine_qty", nil)];
         return;
     }
     

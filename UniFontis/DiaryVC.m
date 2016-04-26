@@ -553,7 +553,7 @@ NSSortDescriptor *brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date
     }
     if(txtView_AddEntry.text.length == 0)
     {
-        [Utility showAlertWithwithMessage:[NSString stringWithFormat:@"Please enter %@ information",[type lowercaseString]]];
+        [Utility showAlertWithMessage:[NSString stringWithFormat:@"Please enter %@ information",[type lowercaseString]]];
         return;
     }
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
@@ -567,7 +567,7 @@ NSSortDescriptor *brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date
         BOOL addInfo=[[DatabaseManager getSharedInstance] updateDiaryInfo:objDiary_current];
         if(addInfo==true)
         {
-//            [Utility showAlertWithwithMessage:@"Diary Updated Successfully"];
+//            [Utility showAlertWithMessage:@"Diary Updated Successfully"];
             objDiary_current=nil;
           
         }
@@ -594,11 +594,11 @@ NSSortDescriptor *brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date
     
     if(txt_sys_addBp.text.length == 0)
     {
-        [Utility showAlertWithwithMessage:DPLocalizedString(@"alert_sys", nil)];
+        [Utility showAlertWithMessage:DPLocalizedString(@"alert_sys", nil)];
         return;
     }else if (txt_dia_addbp.text.length==0)
     {
-        [Utility showAlertWithwithMessage:DPLocalizedString(@"alert_dia", nil)];
+        [Utility showAlertWithMessage:DPLocalizedString(@"alert_dia", nil)];
         return;
     }
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
@@ -613,7 +613,7 @@ NSSortDescriptor *brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date
         BOOL addInfo=[[DatabaseManager getSharedInstance] updateDiaryInfo:objDiary_current];
         if(addInfo==true)
         {
-           // [Utility showAlertWithwithMessage:DPLocalizedString(@"diary_updated", nil)];
+           // [Utility showAlertWithMessage:DPLocalizedString(@"diary_updated", nil)];
             objDiary_current=nil;
            
         }
@@ -630,7 +630,7 @@ NSSortDescriptor *brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date
         BOOL addInfo=[[DatabaseManager getSharedInstance] addDiaryInfo:objdiary];
         if(addInfo==true)
         {
-        //    [Utility showAlertWithwithMessage:DPLocalizedString(@"diary_updated", nil)];
+        //    [Utility showAlertWithMessage:DPLocalizedString(@"diary_updated", nil)];
         }
         [popover dismiss];
         tblDiary.tableHeaderView=headerView;

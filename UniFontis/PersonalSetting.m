@@ -206,7 +206,7 @@
         
           if(![Utility isValidateEmail:email.text])
           {
-              [Utility showAlertWithwithMessage:@"Invalid email please enter valid email"];
+              [Utility showAlertWithMessage:@"Invalid email please enter valid email"];
               return;
           }
         [def setValue:email.text forKey:@"email"];
