@@ -217,41 +217,42 @@
     
     
     DiaryVC *objmessages;
-    UINavigationController *childPhotoNavBar;
+    UINavigationController *diaryNavBar;
     if(!objmessages){
         objmessages= [[DiaryVC alloc]initWithNibName:@"DiaryVC" bundle:nil];
-        childPhotoNavBar=[[UINavigationController alloc]initWithRootViewController:objmessages];
-        [Utility setNavigationBar:childPhotoNavBar];
+        diaryNavBar=[[UINavigationController alloc]initWithRootViewController:objmessages];
+        [Utility setNavigationBar:diaryNavBar];
     }
-    childPhotoNavBar.tabBarItem.title=DPLocalizedString(@"diary_tab",nil);
-    childPhotoNavBar.tabBarItem.image=[[UIImage imageNamed:@"tab_diary.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [childPhotoNavBar.tabBarItem setSelectedImage:[UIImage imageNamed:@"tab_diary.png"]];
-    [childPhotoNavBar.tabBarItem setTitleTextAttributes:dictTitleAttributes forState:UIControlStateNormal];
+    diaryNavBar.tabBarItem.title=DPLocalizedString(@"diary_tab",nil);
+    diaryNavBar.tabBarItem.image=[[UIImage imageNamed:@"tab_diary.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [diaryNavBar.tabBarItem setSelectedImage:[UIImage imageNamed:@"tab_diary.png"]];
+    [diaryNavBar.tabBarItem setTitleTextAttributes:dictTitleAttributes forState:UIControlStateNormal];
     
-    MedicationVC *objNewsLetterVC;
-    UINavigationController *newsLetterNavBar;
-    if(!objNewsLetterVC){
-        objNewsLetterVC= [[MedicationVC alloc]initWithNibName:@"MedicationVC" bundle:nil];
-        newsLetterNavBar=[[UINavigationController alloc]initWithRootViewController:objNewsLetterVC];
-        newsLetterNavBar.tabBarItem.title=DPLocalizedString(@"medication_tab",nil);
-        [Utility setNavigationBar:newsLetterNavBar];
+    MedicationVC *medicationVC;
+    UINavigationController *medicationNavBar;
+    if(!medicationVC){
+        medicationVC= [[MedicationVC alloc]initWithNibName:@"MedicationVC" bundle:nil];
+        medicationNavBar=[[UINavigationController alloc]initWithRootViewController:medicationVC];
+        medicationNavBar.tabBarItem.title=DPLocalizedString(@"medication_tab",nil);
+        [Utility setNavigationBar:medicationNavBar];
     }
-    newsLetterNavBar.tabBarItem.image=[[UIImage imageNamed:@"tab_medication.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [newsLetterNavBar.tabBarItem setSelectedImage:[UIImage imageNamed:@"tab_medication.png"]];
-    [newsLetterNavBar.tabBarItem setTitleTextAttributes:dictTitleAttributes forState:UIControlStateNormal];
-    FoodVC *objContactUsVC;
-    UINavigationController *contactUsNavBar;
-    if(!objContactUsVC){
-        objContactUsVC= [[FoodVC alloc]initWithNibName: @"FoodVC" bundle:nil];
-        contactUsNavBar=[[UINavigationController alloc]initWithRootViewController:objContactUsVC];
-        [Utility setNavigationBar:contactUsNavBar];
-    }
-    contactUsNavBar.tabBarItem.title=DPLocalizedString(@"food_tab",nil);
-    contactUsNavBar.tabBarItem.image=[[UIImage imageNamed:@"tab_food.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [contactUsNavBar.tabBarItem setSelectedImage:[UIImage imageNamed:@"tab_food.png"]];
-    [contactUsNavBar.tabBarItem setTitleTextAttributes:dictTitleAttributes forState:UIControlStateNormal];
+    medicationNavBar.tabBarItem.image=[[UIImage imageNamed:@"tab_medication.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [medicationNavBar.tabBarItem setSelectedImage:[UIImage imageNamed:@"tab_medication.png"]];
+    [medicationNavBar.tabBarItem setTitleTextAttributes:dictTitleAttributes forState:UIControlStateNormal];
     
-    tabBarController.viewControllers =[NSArray arrayWithObjects:glosBar,childPhotoNavBar,newsLetterNavBar,contactUsNavBar,homeNavBar, nil] ;
+    FoodVC *foodVC;
+    UINavigationController *foodNavBar;
+    if(!foodVC){
+        foodVC= [[FoodVC alloc]initWithNibName: @"FoodVC" bundle:nil];
+        foodNavBar=[[UINavigationController alloc]initWithRootViewController:foodVC];
+        [Utility setNavigationBar:foodNavBar];
+    }
+    foodNavBar.tabBarItem.title=DPLocalizedString(@"food_tab",nil);
+    foodNavBar.tabBarItem.image=[[UIImage imageNamed:@"tab_food.png"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [foodNavBar.tabBarItem setSelectedImage:[UIImage imageNamed:@"tab_food.png"]];
+    [foodNavBar.tabBarItem setTitleTextAttributes:dictTitleAttributes forState:UIControlStateNormal];
+    
+    tabBarController.viewControllers =[NSArray arrayWithObjects:glosBar,diaryNavBar,medicationNavBar,foodNavBar,homeNavBar, nil] ;
     if([[NSUserDefaults standardUserDefaults]integerForKey:@"badgeValue"] >0)
     {
         // [[tabBarController.tabBar.items objectAtIndex:1]setBadgeValue:[NSString stringWithFormat:@"%ld",(long)[[NSUserDefaults standardUserDefaults]integerForKey:@"badgeValue"]]];
