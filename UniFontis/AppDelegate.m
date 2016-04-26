@@ -183,7 +183,7 @@
         tabBarController = [[UITabBarController alloc] init];
     }
     tabBarController.tabBar.translucent=NO;
-    tabBarController.tabBar.barTintColor=NAVBARCLOLOR;
+    tabBarController.tabBar.barTintColor=NAVBARCOLOR;
     [tabBarController.tabBar setTintColor:[UIColor whiteColor]];
     
     NSDictionary *dictTitleAttributes=[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,[UIFont fontWithName:FONT_LBL_REG size:12.0],NSFontAttributeName, nil];

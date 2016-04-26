@@ -10,7 +10,7 @@
 #define TRIM(string) [string stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]]
 
 
-#define NAVBARCLOLOR  [UIColor colorWithRed:71.0/255 green:69.0/255 blue:61.0/255 alpha:1.0]
+#define NAVBARCOLOR  [UIColor colorWithRed:206.0/255 green:26.0/255 blue:34.0/255 alpha:1.0]
 #define NAV_FONT_COLOR [UIColor colorWithRed:191.0/255 green:186.0/255 blue:177.0/255 alpha:1.0]
 #define BG_COLOR [UIColor colorWithRed:227.0/255 green:222.0/255 blue:214.0/255 alpha:1.0]
 

@@ -360,8 +360,8 @@
 - (NSArray *)rightButtons
 {
     NSMutableArray *rightUtilityButtons = [NSMutableArray new];
-    [rightUtilityButtons sw_addUtilityButtonWithColor:NAVBARCLOLOR icon:[UIImage imageNamed:@"edit_icon.png"]];
-    [rightUtilityButtons sw_addUtilityButtonWithColor:NAVBARCLOLOR icon:[UIImage imageNamed:@"delete_icon.png"]];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:NAVBARCOLOR icon:[UIImage imageNamed:@"edit_icon.png"]];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:NAVBARCOLOR icon:[UIImage imageNamed:@"delete_icon.png"]];
     return rightUtilityButtons;
 }
 

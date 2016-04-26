@@ -34,11 +34,11 @@
     [btnCancel_AddBox.layer setBorderWidth:1.0];
     [btnCancel_AddBox.layer setBorderColor:BTN_BORDER_COLOR.CGColor];
     [btnAddtxt_Box.layer setBorderColor:BTN_BORDER_COLOR.CGColor];
-    [txtView_AddEntry.layer setBorderColor:NAVBARCLOLOR.CGColor];
+    [txtView_AddEntry.layer setBorderColor:NAVBARCOLOR.CGColor];
     [view_addText.layer setBorderWidth:3.0];
     [view_addText.layer setBorderColor:BTN_BORDER_COLOR.CGColor];
     
-    [txtView_AddDate.layer setBorderColor:NAVBARCLOLOR.CGColor];
+    [txtView_AddDate.layer setBorderColor:NAVBARCOLOR.CGColor];
 
     txtView_AddDate.inputView=View_datePicker;
        [self getAllData];
@@ -271,8 +271,8 @@ NSSortDescriptor *brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date
 - (NSArray *)rightButtons
 {
     NSMutableArray *rightUtilityButtons = [NSMutableArray new];
-    [rightUtilityButtons sw_addUtilityButtonWithColor:NAVBARCLOLOR icon:[UIImage imageNamed:@"edit_icon.png"]];
-    [rightUtilityButtons sw_addUtilityButtonWithColor:NAVBARCLOLOR icon:[UIImage imageNamed:@"delete_icon.png"]];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:NAVBARCOLOR icon:[UIImage imageNamed:@"edit_icon.png"]];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:NAVBARCOLOR icon:[UIImage imageNamed:@"delete_icon.png"]];
     return rightUtilityButtons;
 }
 
