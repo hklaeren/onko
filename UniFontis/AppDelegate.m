@@ -196,9 +196,9 @@
         [Utility setNavigationBar:homeNavBar];
     }
     homeNavBar.navigationBarHidden=true;
-    homeNavBar.tabBarItem.title=DPLocalizedString(@"home_tab", nil);
-    homeNavBar.tabBarItem.image=[[UIImage imageNamed:@"tab_home.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    [homeNavBar.tabBarItem setSelectedImage:[UIImage imageNamed:@"tab_home.png"]];
+    homeNavBar.tabBarItem.title=DPLocalizedString(@"settings_tab", nil);
+    homeNavBar.tabBarItem.image=[[UIImage imageNamed:@"personal_settings.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    [homeNavBar.tabBarItem setSelectedImage:[UIImage imageNamed:@"personal_settings.png"]];
     [homeNavBar.tabBarItem setTitleTextAttributes:dictTitleAttributes forState:UIControlStateNormal];
     
     
@@ -210,7 +210,7 @@
         glosBar=[[UINavigationController alloc]initWithRootViewController:objGlos];
         [Utility setNavigationBar:glosBar];
     }
-    glosBar.tabBarItem.title=DPLocalizedString(@"glossary_tab",nil);
+    glosBar.tabBarItem.title=DPLocalizedString(@"info_tab",nil);
     glosBar.tabBarItem.image=[[UIImage imageNamed:@"tab_glossery.png"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     [glosBar.tabBarItem setSelectedImage:[UIImage imageNamed:@"tab_glossery.png"]];
     [glosBar.tabBarItem setTitleTextAttributes:dictTitleAttributes forState:UIControlStateNormal];
@@ -251,7 +251,7 @@
     [contactUsNavBar.tabBarItem setSelectedImage:[UIImage imageNamed:@"tab_food.png"]];
     [contactUsNavBar.tabBarItem setTitleTextAttributes:dictTitleAttributes forState:UIControlStateNormal];
     
-    tabBarController.viewControllers =[NSArray arrayWithObjects:homeNavBar,childPhotoNavBar,glosBar,newsLetterNavBar,contactUsNavBar, nil] ;
+    tabBarController.viewControllers =[NSArray arrayWithObjects:glosBar,childPhotoNavBar,newsLetterNavBar,contactUsNavBar,homeNavBar, nil] ;
     if([[NSUserDefaults standardUserDefaults]integerForKey:@"badgeValue"] >0)
     {
         // [[tabBarController.tabBar.items objectAtIndex:1]setBadgeValue:[NSString stringWithFormat:@"%ld",(long)[[NSUserDefaults standardUserDefaults]integerForKey:@"badgeValue"]]];

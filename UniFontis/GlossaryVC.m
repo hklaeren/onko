@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [Utility setNavigationBar:self.navigationController];
-    self.title= DPLocalizedString(@"glossary_tab", nil);
+    self.title= DPLocalizedString(@"info_tab", nil);
     [tblGlosary setBackgroundColor:BG_COLOR];
     
     NSString *strPath = [[NSBundle mainBundle] pathForResource:@"glossary" ofType:@"csv"];

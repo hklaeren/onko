@@ -20,6 +20,10 @@
 "diary_tab"="Tagebuch";
 "medication_tab"="Medikation";
 "food_tab"="Ernährung";
+"info_tab"="Info";
+"settings_tab"="Einstellungen";
+
+
 
 // Diary
 

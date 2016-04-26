@@ -22,6 +22,8 @@
 "diary_tab"="Diary";
 "medication_tab"="Medication";
 "food_tab"="Food";
+"info_tab"="Info";
+"settings_tab"="Settings";
 
 // Diary
 
