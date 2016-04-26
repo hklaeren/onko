@@ -1,5 +1,5 @@
 //
-//  HomeVC.h
+//  SettingsVC.h
 //  UniFontis
 //
 //  Created by Kalpit Gajera on 03/04/15.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Utility.h"
-@interface HomeVC : UIViewController
+@interface SettingsVC : UIViewController
 {
      IBOutlet UIButton *btnFood;
     

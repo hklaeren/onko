@@ -49,8 +49,8 @@
 		68FB04261ACE60F400DDC7BE /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FB04251ACE60F400DDC7BE /* Reachability.m */; };
 		68FB04281ACE66A000DDC7BE /* glossary.csv in Resources */ = {isa = PBXBuildFile; fileRef = 68FB04271ACE66A000DDC7BE /* glossary.csv */; };
 		68FB04361ACE720900DDC7BE /* glossary.csv in Resources */ = {isa = PBXBuildFile; fileRef = 68FB04271ACE66A000DDC7BE /* glossary.csv */; };
-		68FB043A1ACE763B00DDC7BE /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FB04381ACE763B00DDC7BE /* HomeVC.m */; };
-		68FB043B1ACE763B00DDC7BE /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68FB04391ACE763B00DDC7BE /* HomeVC.xib */; };
+		68FB043A1ACE763B00DDC7BE /* SettingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FB04381ACE763B00DDC7BE /* SettingsVC.m */; };
+		68FB043B1ACE763B00DDC7BE /* SettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68FB04391ACE763B00DDC7BE /* SettingsVC.xib */; };
 		68FB045A1ACE76C300DDC7BE /* box_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 68FB04501ACE76C300DDC7BE /* box_off.png */; };
 		68FB045B1ACE76C300DDC7BE /* box_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68FB04511ACE76C300DDC7BE /* box_off@2x.png */; };
 		68FB045C1ACE76C300DDC7BE /* box_off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 68FB04521ACE76C300DDC7BE /* box_off@3x.png */; };
@@ -210,9 +210,9 @@
 		68FB04241ACE60F400DDC7BE /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = ../UniFontis/Reachability.h; sourceTree = "<group>"; };
 		68FB04251ACE60F400DDC7BE /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = ../UniFontis/Reachability.m; sourceTree = "<group>"; };
 		68FB04271ACE66A000DDC7BE /* glossary.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = glossary.csv; path = UniFontisTests/glossary.csv; sourceTree = SOURCE_ROOT; };
-		68FB04371ACE763B00DDC7BE /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVC.h; sourceTree = "<group>"; };
-		68FB04381ACE763B00DDC7BE /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVC.m; sourceTree = "<group>"; };
-		68FB04391ACE763B00DDC7BE /* HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeVC.xib; sourceTree = "<group>"; };
+		68FB04371ACE763B00DDC7BE /* SettingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsVC.h; sourceTree = "<group>"; };
+		68FB04381ACE763B00DDC7BE /* SettingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsVC.m; sourceTree = "<group>"; };
+		68FB04391ACE763B00DDC7BE /* SettingsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsVC.xib; sourceTree = "<group>"; };
 		68FB04501ACE76C300DDC7BE /* box_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box_off.png; sourceTree = "<group>"; };
 		68FB04511ACE76C300DDC7BE /* box_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "box_off@2x.png"; sourceTree = "<group>"; };
 		68FB04521ACE76C300DDC7BE /* box_off@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "box_off@3x.png"; sourceTree = "<group>"; };
@@ -373,9 +373,9 @@
 			children = (
 				68FB03CD1ACE525100DDC7BE /* AppDelegate.h */,
 				68FB03CE1ACE525100DDC7BE /* AppDelegate.m */,
-				68FB04371ACE763B00DDC7BE /* HomeVC.h */,
-				68FB04381ACE763B00DDC7BE /* HomeVC.m */,
-				68FB04391ACE763B00DDC7BE /* HomeVC.xib */,
+				68FB04371ACE763B00DDC7BE /* SettingsVC.h */,
+				68FB04381ACE763B00DDC7BE /* SettingsVC.m */,
+				68FB04391ACE763B00DDC7BE /* SettingsVC.xib */,
 				68FB03F41ACE591E00DDC7BE /* DiaryVC.h */,
 				68FB03F51ACE591E00DDC7BE /* DiaryVC.m */,
 				68FB03F61ACE591E00DDC7BE /* DiaryVC.xib */,
@@ -705,7 +705,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68FB03D71ACE525100DDC7BE /* Images.xcassets in Resources */,
-				68FB043B1ACE763B00DDC7BE /* HomeVC.xib in Resources */,
+				68FB043B1ACE763B00DDC7BE /* SettingsVC.xib in Resources */,
 				68FB04971ACE76D500DDC7BE /* medication@2x.png in Resources */,
 				68FB04891ACE76D500DDC7BE /* bg_home.png in Resources */,
 				68FB049D1ACE76D500DDC7BE /* tab_diary@2x.png in Resources */,
@@ -832,7 +832,7 @@
 				68FB05061ACEBD3E00DDC7BE /* SWLongPressGestureRecognizer.m in Sources */,
 				68FB050A1ACEBD3E00DDC7BE /* UMTableViewCell.m in Sources */,
 				68FB05071ACEBD3E00DDC7BE /* SWTableViewCell.m in Sources */,
-				68FB043A1ACE763B00DDC7BE /* HomeVC.m in Sources */,
+				68FB043A1ACE763B00DDC7BE /* SettingsVC.m in Sources */,
 				681605531ADCEFDB00B9A3FF /* DPAutolocalizationProxy.m in Sources */,
 				681605541ADCEFDB00B9A3FF /* DPLocalizationManager.m in Sources */,
 				6816055F1ADD1ED000B9A3FF /* PersonalSetting.m in Sources */,

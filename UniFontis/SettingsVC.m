@@ -1,23 +1,23 @@
 //
-//  HomeVC.m
+//  SettingsVC.m
 //  UniFontis
 //
 //  Created by Kalpit Gajera on 03/04/15.
 //  Copyright (c) 2015 NexusLinkServices. All rights reserved.
 //
 
-#import "HomeVC.h"
+#import "SettingsVC.h"
 #import "AppDelegate.h"
 #import "Static.h"
 #import "DPLocalizationManager.h"
 #import "PersonalSetting.h"
-@interface HomeVC ()
+@interface SettingsVC ()
 {
     AppDelegate *delegate;
 }
 @end
 
-@implementation HomeVC
+@implementation SettingsVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

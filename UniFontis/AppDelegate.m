@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "InfoVC.h"
-#import "HomeVC.h"
+#import "SettingsVC.h"
 #import "DiaryVC.h"
 #import "DashboardVC.h"
 #import "FoodVC.h"
@@ -188,10 +188,10 @@
     
     NSDictionary *dictTitleAttributes=[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName,[UIFont fontWithName:FONT_LBL_REG size:12.0],NSFontAttributeName, nil];
     
-    HomeVC *objHomeView;
+    SettingsVC *objHomeView;
     UINavigationController *homeNavBar;
     if(!objHomeView){
-        objHomeView = [[HomeVC alloc]initWithNibName:@"HomeVC" bundle:nil];
+        objHomeView = [[SettingsVC alloc]initWithNibName:@"SettingsVC" bundle:nil];
         homeNavBar=[[UINavigationController alloc]initWithRootViewController:objHomeView];
         [Utility setNavigationBar:homeNavBar];
     }
