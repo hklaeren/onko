@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "GlossaryVC.h"
+#import "InfoVC.h"
 #import "HomeVC.h"
 #import "DiaryVC.h"
 #import "DashboardVC.h"
@@ -203,10 +203,10 @@
     
     
     
-    GlossaryVC *objGlos;
+    InfoVC *objGlos;
     UINavigationController *glosBar;
     if(!objGlos){
-        objGlos = [[GlossaryVC alloc]initWithNibName:@"GlossaryVC" bundle:nil];
+        objGlos = [[InfoVC alloc]initWithNibName:@"InfoVC" bundle:nil];
         glosBar=[[UINavigationController alloc]initWithRootViewController:objGlos];
         [Utility setNavigationBar:glosBar];
     }
