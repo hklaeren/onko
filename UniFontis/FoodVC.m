@@ -60,7 +60,7 @@
 {
     lblQty.text=DPLocalizedString(@"qty", nil);
     lblFat.text=[NSString stringWithFormat:@"%@ (g)",DPLocalizedString(@"fat", nil)];
-    lblFood.text=DPLocalizedString(@"food_tab", nil);
+    lblFood.text=DPLocalizedString(@"food_text", nil);
     lblgram.text=DPLocalizedString(@"gram", nil);
     lblKcal.text=DPLocalizedString(@"cal", nil);
     lblPiece.text=DPLocalizedString(@"piece", nil);
@@ -503,7 +503,7 @@
 -(NSString *)dataFilePath {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSLog(@"%@",documentsDirectory);
+    NSLog(@"Document directory %@",documentsDirectory);
 
     return [documentsDirectory stringByAppendingPathComponent:@"Food.csv"];
 }
@@ -513,7 +513,7 @@
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:[self dataFilePath]]) {
         [[NSFileManager defaultManager] createFileAtPath: [self dataFilePath] contents:nil attributes:nil];
-        NSLog(@"Route create");
+        NSLog(@"Route created");
     }else
     {
         [[NSFileManager defaultManager] removeItemAtPath:[self dataFilePath] error:nil];

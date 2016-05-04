@@ -474,7 +474,7 @@ NSString *kRemindMeNotificationDataKey = @"kRemindMeNotificationDataKey";
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:[self dataFilePath]]) {
         [[NSFileManager defaultManager] createFileAtPath: [self dataFilePath] contents:nil attributes:nil];
-        NSLog(@"Route creato");
+        NSLog(@"Route created");
     }else
     {
         [[NSFileManager defaultManager] removeItemAtPath:[self dataFilePath] error:nil];
@@ -522,7 +522,7 @@ NSString *kRemindMeNotificationDataKey = @"kRemindMeNotificationDataKey";
 - (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error {
     
     if (error){
-        NSString *errorTitle = @"Erro to send";
+        NSString *errorTitle = @"mailComposeController error";
         NSString *errorDescription = [error localizedDescription];
         UIAlertView *errorView = [[UIAlertView alloc]initWithTitle:errorTitle message:errorDescription delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
         [errorView show];

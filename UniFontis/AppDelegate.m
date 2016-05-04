@@ -14,6 +14,8 @@
 #import "FoodVC.h"
 #import "MedicationVC.h"
 #import "DPLocalizationManager.h"
+#import "RNCachingURLProtocol.h"
+
 @interface AppDelegate ()
 {
     // Local Notification
@@ -55,7 +57,7 @@
     NSSortDescriptor *brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"id_Medicine" ascending:NO];
     NSArray *sortDescriptors = [NSArray arrayWithObject:brandDescriptor];
     arrMedicineData =[[NSMutableArray alloc]initWithArray:[arrData sortedArrayUsingDescriptors:sortDescriptors]];
-   // NSLog(@"%@",[arrMedicineData valueForKey:@"id_Medicine"]);
+    NSLog(@"Medicine ID %@",[arrMedicineData valueForKey:@"id_Medicine"]);
 }
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     NSLog(@"AppDelegate didReceiveLocalNotification %@", notification.userInfo);
@@ -64,7 +66,7 @@
     application.applicationIconBadgeNumber = 0;
     tabBarController.selectedIndex=3;
     dicNotify=notification.userInfo;
-    NSLog(@"%@",[dicNotify valueForKey:@"kRemindMeNotificationDataKey"]);
+    NSLog(@"Local notification received %@",[dicNotify valueForKey:@"kRemindMeNotificationDataKey"]);
     [self setLangLabels];
     [self LocalNotificationCall:[NSString stringWithFormat:@"%@",[dicNotify valueForKey:@"kRemindMeNotificationDataKey"]]];
 }
@@ -76,7 +78,7 @@
     strMedication=DPLocalizedString(@"medication", nil);
 }
 -(void)LocalNotificationCall:(NSString *)message{
-    NSLog(@"%@",message);
+    NSLog(@"LocalNotificationCall %@",message);
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:strReminder
                                                     message:message
                                                    delegate:self
@@ -97,7 +99,7 @@
         for (int i=0; i<[eventArray count]; i++)
         {
             oneEvent = [eventArray objectAtIndex:i];
-            NSLog(@"%@",oneEvent.userInfo);
+            NSLog(@"alertView event %@",oneEvent.userInfo);
             
             uid=[NSString stringWithFormat:@"%d",objMed.id_Medicine];
             if ([uid isEqualToString:[NSString stringWithFormat:@"%d",objMed.id_Medicine]])
@@ -157,7 +159,7 @@
     }
     
     BOOL isSuccess=[[DatabaseManager getSharedInstance] CheckDbExist];
-    NSLog(@"%d",isSuccess);
+    NSLog(@"Checking database connection: %s",isSuccess ? "Success" : "Failure");
     // Set app's client ID for |GPPSignIn| and |GPPShare|.
     
     
@@ -171,6 +173,7 @@
     //  self.window.rootViewController =navVC;
 //    NSLog(@"%@",[UIFont fontNamesForFamilyName:@"Helvetica"]);
     //  [[UILabel appearance]setFont:[UIFont fontWithName:@"HelveticaNeue" size:[UIFont systemFontSize]]];
+    [NSURLProtocol registerClass:[RNCachingURLProtocol class]];
     [self.window makeKeyAndVisible];
     
     return YES;

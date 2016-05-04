@@ -11,6 +11,7 @@
 "add_food"="Neue Nahrung";
 "add_diary"="Neue Notiz";
 "pers_sett"="Einstellungen";
+"question"="Anfrage";
 
 
 // Tabbar
@@ -63,6 +64,7 @@
 "medication"="Medikation";
 
 // Food
+"food_text"="Nahrung";
 "fat"="Fett";
 "cal"="kCal";
 "Protein"="Eiweiß";

@@ -76,7 +76,7 @@
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
                                NSError *error1;
                                if(data==nil){
-                                   NSLog(@"Error Responce : %@",error);
+                                   NSLog(@"executeRequestwithServicetype: %@",error);
                                    block(nil,error);
                                }else{
                                    
@@ -96,7 +96,7 @@
                            completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
                                NSError *error1;
                                if(data==nil){
-                                   NSLog(@"Error Responce : %@",error);
+                                   NSLog(@"executeRequestwithUrl: %@",error);
                                    block(nil,error);
                                }else{
                                    
@@ -136,7 +136,7 @@
                              if(data==nil){
                                    block(nil,error);
                                }else{
-                               NSLog(@"Responce : %@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
+                               NSLog(@"executeRequestwithServicetype: %@",[[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding]);
                                NSMutableDictionary * innerJson = [NSJSONSerialization                                                JSONObjectWithData:data options:kNilOptions error:&error1];
                                block(innerJson,error); // Call back the block passed into your method
                                }

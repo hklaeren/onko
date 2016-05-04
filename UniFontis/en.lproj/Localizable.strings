@@ -13,6 +13,7 @@
 "add_food"="Add Food";
 "add_diary"="Add Diary";
 "pers_sett"="Personal Settings";
+"question"="Question";
 
 
 // Tabbar
@@ -64,6 +65,7 @@
 
 
 // Food
+"food_text"="Food";
 "fat"="Fat";
 "cal"="kCal";
 "Protein"="protein";

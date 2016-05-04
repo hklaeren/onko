@@ -46,7 +46,7 @@ static sqlite3 *database = nil;
         
         if(error)
         {
-            NSLog(@"%@",error);
+            NSLog(@"Database error %@",error);
         }
         
             if (sqlite3_open([databasePath UTF8String], &database) != SQLITE_OK) {
@@ -163,10 +163,10 @@ static sqlite3 *database = nil;
         {
             if (sqlite3_step(statement) == SQLITE_DONE)
             {
-                NSLog(@"Success");
+                NSLog(@"Delete diary info: Success");
             }else
             {
-                NSLog(@"fail");
+                NSLog(@"Delete diary info: Failure");
             }
         }
     }
@@ -190,10 +190,10 @@ static sqlite3 *database = nil;
         sqlite3_prepare_v2(database, insert_stmt, -1, &statement, NULL);
         if (sqlite3_step(statement) == SQLITE_DONE)
         {
-            NSLog(@"success");
+            NSLog(@"Insert medication: Success");
         }else
         {
-                        NSLog(@"Fail");
+            NSLog(@"Insert medication: Failure");
         }
     }
     sqlite3_finalize(statement);
@@ -279,10 +279,10 @@ static sqlite3 *database = nil;
         {
             if (sqlite3_step(statement) == SQLITE_DONE)
             {
-                NSLog(@"Success");
+                NSLog(@"Delete medication: Success");
             }else
             {
-                NSLog(@"fail");
+                NSLog(@"Delete medication: Failure");
             }
         }
     }
@@ -306,10 +306,10 @@ static sqlite3 *database = nil;
         sqlite3_prepare_v2(database, insert_stmt, -1, &statement, NULL);
         if (sqlite3_step(statement) == SQLITE_DONE)
         {
-            NSLog(@"success");
+            NSLog(@"Insert food: Success");
         }else
         {
-            NSLog(@"Fail");
+            NSLog(@"Insert food: Failure");
         }
     }
     sqlite3_finalize(statement);
@@ -372,10 +372,10 @@ static sqlite3 *database = nil;
         {
             if (sqlite3_step(statement) == SQLITE_DONE)
             {
-                NSLog(@"Success");
+                NSLog(@"Delete food: Success");
             }else
             {
-                NSLog(@"fail");
+                NSLog(@"Delete food: fail");
             }
         }
     }

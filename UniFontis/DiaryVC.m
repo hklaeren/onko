@@ -231,7 +231,7 @@ NSSortDescriptor *brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date
     UILabel *lblTyp=(UILabel *)[cell viewWithTag:101];
     
     NSString *type=objDiary.type;
-    NSLog(@"%@ ",type);
+    NSLog(@"Diary entry of type %@ ",type);
     
     if([type isEqualToString:@"Weight"])
     {
@@ -582,7 +582,7 @@ NSSortDescriptor *brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date
         objdiary.info=txtView_AddEntry.text;
         
         BOOL addInfo=[[DatabaseManager getSharedInstance] addDiaryInfo:objdiary];
-        NSLog(@" %s", addInfo ? "true" : "false");
+        NSLog(@"Add text entry %s", addInfo ? "Success" : "Failure");
     }
     [popover dismiss];
     tblDiary.tableHeaderView=headerView;
@@ -647,7 +647,7 @@ NSSortDescriptor *brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSLog(@"%@",documentsDirectory);
+    NSLog(@"Documents directory%@",documentsDirectory);
     return [documentsDirectory stringByAppendingPathComponent:@"MyDiary.csv"];
 }
 -(void)mailButtonPressed
@@ -655,7 +655,7 @@ NSSortDescriptor *brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date
     
     if (![[NSFileManager defaultManager] fileExistsAtPath:[self dataFilePath]]) {
         [[NSFileManager defaultManager] createFileAtPath: [self dataFilePath] contents:nil attributes:nil];
-        NSLog(@"Route creato");
+        NSLog(@"Route created");
     }else
     {
         [[NSFileManager defaultManager] removeItemAtPath:[self dataFilePath] error:nil];
@@ -688,7 +688,7 @@ NSSortDescriptor *brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"date
         }else{
             type=DPLocalizedString(@"medication", nil);
         }
-        NSLog(@"%@ ",type);
+        NSLog(@"Diary entry of type %@ ",type);
         /*
         if([objDiary.type isEqualToString:@"Weight"])
         {

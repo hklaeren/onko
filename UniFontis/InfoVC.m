@@ -1,5 +1,5 @@
 //
-//  GloassaryVC.m
+//  InfoVC.m
 //  UniFontis
 //
 //  Created by Kalpit Gajera on 03/04/15.
@@ -34,9 +34,9 @@
     [super viewDidLoad];
     [Utility setNavigationBar:self.navigationController];
     self.title= DPLocalizedString(@"info_tab", nil);
-    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"contact-icon.png"] style:UIBarButtonItemStylePlain target:self action:@selector(callButttonPressed)]];
+    [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"contact-icon.png"] style:UIBarButtonItemStylePlain target:self action:@selector(callButtonPressed)]];
     
-    NSString *urlAddress = @"https://www.klaeren.com/webview/";
+    NSString *urlAddress = @"https://UniFontis:UniFontis381!!@www.klaeren.com/webview/";
     
     //Create a URL object.
     NSURL *url = [NSURL URLWithString:urlAddress];
@@ -57,20 +57,29 @@
     [webViewLocal stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitTouchCallout='none';"];
 }
 
--(void)callButttonPressed
+-(void)callButtonPressed
 {
     MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
     picker.mailComposeDelegate = self;
-    [picker setSubject:@"Question"];
+    [picker setSubject:DPLocalizedString(@"question",nil)];
     // Set up recipients
     // NSArray *toRecipients = [NSArray arrayWithObject:@"kontakt@unifontis.net"];
     NSArray *toRecipients = [NSArray arrayWithObject:@"herbert@klaeren.com"];
 
     [picker setToRecipients:toRecipients];
     
-    
-    
     [self presentViewController:picker animated:YES completion:NULL];
+}
+
+-(void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
+    if (error){
+        NSString *errorTitle = @"Mail compose error";
+        NSString *errorDescription = [error localizedDescription];
+        UIAlertView *errorView = [[UIAlertView alloc]initWithTitle:errorTitle message:errorDescription delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+        [errorView show];
+    }
+    [self becomeFirstResponder];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result{
