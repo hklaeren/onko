@@ -47,10 +47,13 @@
 {
     return (AppDelegate *)[[UIApplication sharedApplication] delegate];
 }
-- (void) clearNotifications {
+
+/* - (void) clearNotifications {
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber: 0];
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
 }
+ */
+
 -(void)getAllMedicineData
 {
     NSMutableArray *arrData=[[DatabaseManager getSharedInstance]getAllMedicineData];
@@ -59,6 +62,7 @@
     arrMedicineData =[[NSMutableArray alloc]initWithArray:[arrData sortedArrayUsingDescriptors:sortDescriptors]];
     NSLog(@"Medicine ID %@",[arrMedicineData valueForKey:@"id_Medicine"]);
 }
+
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
     NSLog(@"AppDelegate didReceiveLocalNotification %@", notification.userInfo);
     
@@ -70,6 +74,7 @@
     [self setLangLabels];
     [self LocalNotificationCall:[NSString stringWithFormat:@"%@",[dicNotify valueForKey:@"kRemindMeNotificationDataKey"]]];
 }
+
 -(void)setLangLabels
 {
     strReminder=DPLocalizedString(@"reminder", nil);
@@ -77,6 +82,7 @@
     strNotTaken=DPLocalizedString(@"nottaken", nil);
     strMedication=DPLocalizedString(@"medication", nil);
 }
+
 -(void)LocalNotificationCall:(NSString *)message{
     NSLog(@"LocalNotificationCall %@",message);
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:strReminder
@@ -87,6 +93,7 @@
     [alert show];
     // [self TakenMedicationToAddDatabase];
 }
+
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     [self getAllMedicineData];
@@ -128,6 +135,7 @@
         }*/
     }
 }
+
 -(void)TakenMedicationToAddDatabase{
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"dd/MM/yyyy, HH:mm";
@@ -141,6 +149,7 @@
         // BOOL addInfo=[[DatabaseManager getSharedInstance] addDiaryInfo:objdiary];
    // NSLog(@"%hhd",addInfo);
 }
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //[self clearNotifications];
     UILocalNotification *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];

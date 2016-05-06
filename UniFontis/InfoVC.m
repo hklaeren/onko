@@ -36,7 +36,7 @@
     self.title= DPLocalizedString(@"info_tab", nil);
     [self.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"contact-icon.png"] style:UIBarButtonItemStylePlain target:self action:@selector(callButtonPressed)]];
     
-    NSString *urlAddress = @"https://UniFontis:UniFontis381!!@www.klaeren.com/webview/";
+    NSString *urlAddress = @"https://UniFontis:UniFontis381!!@www.klaeren.com/webview/krebs.html";
     
     //Create a URL object.
     NSURL *url = [NSURL URLWithString:urlAddress];
