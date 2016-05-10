@@ -57,10 +57,10 @@
 -(void)getAllMedicineData
 {
     NSMutableArray *arrData=[[DatabaseManager getSharedInstance]getAllMedicineData];
-    NSSortDescriptor *brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"id_Medicine" ascending:NO];
+    NSSortDescriptor *brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"id_Medicine" ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObject:brandDescriptor];
     arrMedicineData =[[NSMutableArray alloc]initWithArray:[arrData sortedArrayUsingDescriptors:sortDescriptors]];
-    NSLog(@"Medicine ID %@",[arrMedicineData valueForKey:@"id_Medicine"]);
+    NSLog(@"getAllMedicineData: %@",[arrMedicineData valueForKey:@"id_Medicine"]);
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
@@ -91,7 +91,6 @@
                                           cancelButtonTitle:strTaken
                                           otherButtonTitles:strNotTaken, nil];
     [alert show];
-    // [self TakenMedicationToAddDatabase];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -106,6 +105,7 @@
         for (int i=0; i<[eventArray count]; i++)
         {
             oneEvent = [eventArray objectAtIndex:i];
+            NSLog(@"alertView objectAtIndex: %d",i);
             NSLog(@"alertView event %@",oneEvent.userInfo);
             
             uid=[NSString stringWithFormat:@"%d",objMed.id_Medicine];
@@ -113,7 +113,7 @@
             {
                 //Cancelling local notification
                 [[UIApplication sharedApplication] cancelLocalNotification:oneEvent];
-                [self TakenMedicationToAddDatabase];
+                [self addTakenMedicationToDatabase];
                 tabBarController.selectedIndex=1;
                 break;
             }
@@ -136,7 +136,7 @@
     }
 }
 
--(void)TakenMedicationToAddDatabase{
+-(void)addTakenMedicationToDatabase{
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"dd/MM/yyyy, HH:mm";
     NSString *yourDate = [dateFormatter stringFromDate:[NSDate date]];
@@ -146,8 +146,8 @@
     objdiary.type=strMedication;
     objdiary.info=[dicNotify valueForKey:@"kRemindMeNotificationDataKey"];
     
-        // BOOL addInfo=[[DatabaseManager getSharedInstance] addDiaryInfo:objdiary];
-   // NSLog(@"%hhd",addInfo);
+    BOOL addInfo=[[DatabaseManager getSharedInstance] addDiaryInfo:objdiary];
+    NSLog(@"Taken Medicine added to database: %s",addInfo?"Success":"Failure");
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -175,6 +175,9 @@
     if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]) {
         [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeSound categories:nil]];
     }
+    
+    /* At this place, we could call the application:didRegisterUserNotificationSettings: method to see which
+       notifications are actually enabled */
     
     
     [[UINavigationBar appearance]setTintColor:[UIColor redColor]];
