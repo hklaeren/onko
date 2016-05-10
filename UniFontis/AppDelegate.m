@@ -57,20 +57,20 @@
 -(void)getAllMedicineData
 {
     NSMutableArray *arrData=[[DatabaseManager getSharedInstance]getAllMedicineData];
-    NSSortDescriptor *brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"id_Medicine" ascending:NO];
+    NSSortDescriptor *brandDescriptor = [[NSSortDescriptor alloc] initWithKey:@"id_Medicine" ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObject:brandDescriptor];
     arrMedicineData =[[NSMutableArray alloc]initWithArray:[arrData sortedArrayUsingDescriptors:sortDescriptors]];
-    NSLog(@"Medicine ID %@",[arrMedicineData valueForKey:@"id_Medicine"]);
+    NSLog(@"getAllMedicineData: %@",[arrMedicineData valueForKey:@"id_Medicine"]);
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-    NSLog(@"AppDelegate didReceiveLocalNotification %@", notification.userInfo);
+    // NSLog(@"AppDelegate didReceiveLocalNotification %@", notification.userInfo);
     
     // Set icon badge number to zero
     application.applicationIconBadgeNumber = 0;
     tabBarController.selectedIndex=3;
     dicNotify=notification.userInfo;
-    NSLog(@"Local notification received %@",[dicNotify valueForKey:@"kRemindMeNotificationDataKey"]);
+    // NSLog(@"Local notification received %@",[dicNotify valueForKey:@"kRemindMeNotificationDataKey"]);
     [self setLangLabels];
     [self LocalNotificationCall:[NSString stringWithFormat:@"%@",[dicNotify valueForKey:@"kRemindMeNotificationDataKey"]]];
 }
@@ -84,14 +84,13 @@
 }
 
 -(void)LocalNotificationCall:(NSString *)message{
-    NSLog(@"LocalNotificationCall %@",message);
+    NSLog(@"LocalNotificationCall: %@",message);
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:strReminder
                                                     message:message
                                                    delegate:self
                                           cancelButtonTitle:strTaken
                                           otherButtonTitles:strNotTaken, nil];
     [alert show];
-    // [self TakenMedicationToAddDatabase];
 }
 
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -106,6 +105,7 @@
         for (int i=0; i<[eventArray count]; i++)
         {
             oneEvent = [eventArray objectAtIndex:i];
+            NSLog(@"alertView.objectAtIndex: %d",i);
             NSLog(@"alertView event %@",oneEvent.userInfo);
             
             uid=[NSString stringWithFormat:@"%d",objMed.id_Medicine];
@@ -113,8 +113,8 @@
             {
                 //Cancelling local notification
                 [[UIApplication sharedApplication] cancelLocalNotification:oneEvent];
-                [self TakenMedicationToAddDatabase];
-                tabBarController.selectedIndex=1;
+                [self addTakenMedicineToDatabase];
+                tabBarController.selectedIndex=2;
                 break;
             }
         }
@@ -136,7 +136,7 @@
     }
 }
 
--(void)TakenMedicationToAddDatabase{
+-(void)addTakenMedicineToDatabase{
     NSDateFormatter* dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"dd/MM/yyyy, HH:mm";
     NSString *yourDate = [dateFormatter stringFromDate:[NSDate date]];
@@ -146,8 +146,8 @@
     objdiary.type=strMedication;
     objdiary.info=[dicNotify valueForKey:@"kRemindMeNotificationDataKey"];
     
-        // BOOL addInfo=[[DatabaseManager getSharedInstance] addDiaryInfo:objdiary];
-   // NSLog(@"%hhd",addInfo);
+    BOOL addInfo=[[DatabaseManager getSharedInstance] addDiaryInfo:objdiary];
+    NSLog(@"Taken medicine added to database: %s",addInfo? "Success": "Failure");
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

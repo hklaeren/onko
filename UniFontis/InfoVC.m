@@ -63,8 +63,8 @@
     picker.mailComposeDelegate = self;
     [picker setSubject:DPLocalizedString(@"question",nil)];
     // Set up recipients
-    // NSArray *toRecipients = [NSArray arrayWithObject:@"kontakt@unifontis.net"];
-    NSArray *toRecipients = [NSArray arrayWithObject:@"herbert@klaeren.com"];
+    NSArray *toRecipients = [NSArray arrayWithObject:@"kontakt@unifontis.net"];
+    // NSArray *toRecipients = [NSArray arrayWithObject:@"herbert@klaeren.com"];
 
     [picker setToRecipients:toRecipients];
     

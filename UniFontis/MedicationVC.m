@@ -771,7 +771,7 @@ NSString *kRemindMeNotificationDataKey = @"kRemindMeNotificationDataKey";
         notif.alertAction = strShowMe;//@"Show me";
         notif.soundName = UILocalNotificationDefaultSoundName;
         
-        notif.repeatInterval = NSCalendarUnitHour;
+        notif.repeatInterval = NSCalendarUnitMinute; // HK for testing
         
         NSDictionary *userDict = [NSDictionary dictionaryWithObject:txtMedicine.text
                                                              forKey:kRemindMeNotificationDataKey];
