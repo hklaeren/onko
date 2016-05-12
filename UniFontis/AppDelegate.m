@@ -112,7 +112,7 @@
             if ([uid isEqualToString:[NSString stringWithFormat:@"%d",objMed.id_Medicine]])
             {
                 //Cancelling local notification
-                [[UIApplication sharedApplication] cancelLocalNotification:oneEvent];
+                // why should we cancel it? [[UIApplication sharedApplication] cancelLocalNotification:oneEvent];
                 [self addTakenMedicationToDatabase];
                 tabBarController.selectedIndex=1;
                 break;

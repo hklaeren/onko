@@ -40,6 +40,7 @@ NSString *kRemindMeNotificationDataKey = @"kRemindMeNotificationDataKey";
     tblView.tableHeaderView=headerView;
     // Do any additional setup after loading the view from its nib.
 }
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [self getAllMedicineData];
@@ -52,6 +53,7 @@ NSString *kRemindMeNotificationDataKey = @"kRemindMeNotificationDataKey";
     }
     [super viewWillAppear:YES];
 }
+
 -(void)setLangLabels
 {
     lblHourley.text=DPLocalizedString(@"hourly", nil);
@@ -122,6 +124,7 @@ NSString *kRemindMeNotificationDataKey = @"kRemindMeNotificationDataKey";
 {
     return  arrMedicineData.count;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
@@ -190,6 +193,7 @@ NSString *kRemindMeNotificationDataKey = @"kRemindMeNotificationDataKey";
     }
     return cell;
 }
+
 - (IBAction)hideAddaMedicineview:(id)sender {
     objMed_current=nil;
     [popover dismiss];
@@ -298,7 +302,7 @@ NSString *kRemindMeNotificationDataKey = @"kRemindMeNotificationDataKey";
 
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell scrollingToState:(SWCellState)state
 {
-    switch (state) {
+    /* switch (state) {
         case 0:
             NSLog(@"utility buttons closed");
             break;
@@ -310,12 +314,12 @@ NSString *kRemindMeNotificationDataKey = @"kRemindMeNotificationDataKey";
             break;
         default:
             break;
-    }
+    }*/
 }
 
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerLeftUtilityButtonWithIndex:(NSInteger)index
 {
-    switch (index) {
+    /* switch (index) {
         case 0:
             NSLog(@"left button 0 was pressed");
             break;
@@ -329,7 +333,7 @@ NSString *kRemindMeNotificationDataKey = @"kRemindMeNotificationDataKey";
             NSLog(@"left btton 3 was pressed");
         default:
             break;
-    }
+    }*/
 }
 
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index
@@ -350,7 +354,7 @@ NSString *kRemindMeNotificationDataKey = @"kRemindMeNotificationDataKey";
     lblinfor.text=objMed.time_duration;
 
     switch (index) {
-        case 0:
+        case 0: //this is the 'Edit' button
         {
             
             objMed_current=objMed;
@@ -408,7 +412,7 @@ NSString *kRemindMeNotificationDataKey = @"kRemindMeNotificationDataKey";
             [cell hideUtilityButtonsAnimated:YES];
             break;
         }
-        case 1:
+        case 1: //This is the 'Delete' button
         {
             NSLog(@"%d",objMed.id_Medicine);
             [[DatabaseManager getSharedInstance] deleteMedicationInfoWithId:objMed.id_Medicine];
@@ -427,9 +431,7 @@ NSString *kRemindMeNotificationDataKey = @"kRemindMeNotificationDataKey";
                     break;
                 }
             }
-            //[[UIApplication sharedApplication] cancelAllLocalNotifications];
             [self getAllMedicineData];
-            // Delete button was pressed
             break;
         }
         default:
@@ -771,7 +773,7 @@ NSString *kRemindMeNotificationDataKey = @"kRemindMeNotificationDataKey";
         notif.alertAction = strShowMe;//@"Show me";
         notif.soundName = UILocalNotificationDefaultSoundName;
         
-        notif.repeatInterval = NSCalendarUnitHour;
+        notif.repeatInterval = NSCalendarUnitMinute; //for testing
         
         NSDictionary *userDict = [NSDictionary dictionaryWithObject:txtMedicine.text
                                                              forKey:kRemindMeNotificationDataKey];
