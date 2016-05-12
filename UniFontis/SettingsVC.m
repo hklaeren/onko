@@ -77,7 +77,7 @@
 - (IBAction)addMedication:(id)sender {
     delegate.isAddMedicine=true;
 
-    [delegate.tabBarController setSelectedIndex:3];
+    [delegate.tabBarController setSelectedIndex:2]; // Medication tab
     
 
 }
@@ -87,7 +87,7 @@
      postNotificationName:@"Adddiary"
      object:self];*/
     delegate.isAddDiary=true;
-    [delegate.tabBarController setSelectedIndex:1];
+    [delegate.tabBarController setSelectedIndex:1]; //Diary tab
     
 }
 
@@ -95,7 +95,7 @@
     
     delegate.isAddFood=true;
 
-    [delegate.tabBarController setSelectedIndex:4];
+    [delegate.tabBarController setSelectedIndex:3]; //Food tab
     
 }
 

@@ -68,7 +68,7 @@
     
     // Set icon badge number to zero
     application.applicationIconBadgeNumber = 0;
-    tabBarController.selectedIndex=3;
+    tabBarController.selectedIndex=2; // Medication tab
     dicNotify=notification.userInfo;
     // NSLog(@"Local notification received %@",[dicNotify valueForKey:@"kRemindMeNotificationDataKey"]);
     [self setLangLabels];
@@ -111,10 +111,8 @@
             uid=[NSString stringWithFormat:@"%d",objMed.id_Medicine];
             if ([uid isEqualToString:[NSString stringWithFormat:@"%d",objMed.id_Medicine]])
             {
-                //Cancelling local notification
-                [[UIApplication sharedApplication] cancelLocalNotification:oneEvent];
                 [self addTakenMedicineToDatabase];
-                tabBarController.selectedIndex=2;
+                tabBarController.selectedIndex=1; //Diary tab
                 break;
             }
         }
@@ -156,7 +154,7 @@
 //    UILocalNotification *notification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (notification)
     {
-       tabBarController.selectedIndex = 3;
+       tabBarController.selectedIndex = 2; // Medication tab
     }
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -267,6 +265,7 @@
     [foodNavBar.tabBarItem setSelectedImage:[UIImage imageNamed:@"tab_food.png"]];
     [foodNavBar.tabBarItem setTitleTextAttributes:dictTitleAttributes forState:UIControlStateNormal];
     
+    // When changing the order of tabs in the next line, remember to inspect all uses of selectedIndex in whole project
     tabBarController.viewControllers =[NSArray arrayWithObjects:glosBar,diaryNavBar,medicationNavBar,foodNavBar,homeNavBar, nil] ;
     if([[NSUserDefaults standardUserDefaults]integerForKey:@"badgeValue"] >0)
     {
