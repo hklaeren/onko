@@ -176,6 +176,9 @@
         [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeSound categories:nil]];
     }
     
+    /* At this place, we could call the application:didRegisterUserNotificationSettings: method to see which
+       notifications are actually enabled */
+    
     
     [[UINavigationBar appearance]setTintColor:[UIColor redColor]];
     [self setHomeViewController];
