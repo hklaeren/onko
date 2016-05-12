@@ -369,7 +369,7 @@
 
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell scrollingToState:(SWCellState)state
 {
-    switch (state) {
+    /* switch (state) {
         case 0:
             NSLog(@"utility buttons closed");
             break;
@@ -381,12 +381,12 @@
             break;
         default:
             break;
-    }
+    }*/
 }
 
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerLeftUtilityButtonWithIndex:(NSInteger)index
 {
-    switch (index) {
+    /* switch (index) {
         case 0:
             NSLog(@"left button 0 was pressed");
             break;
@@ -400,7 +400,7 @@
             NSLog(@"left btton 3 was pressed");
         default:
             break;
-    }
+    }*/
 }
 
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell1 didTriggerRightUtilityButtonWithIndex:(NSInteger)index
